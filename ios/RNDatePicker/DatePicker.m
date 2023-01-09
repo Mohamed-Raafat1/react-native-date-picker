@@ -45,7 +45,18 @@
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
-
+-(void)setHijriOrGregorian:(NSString *)hijriOrGregorian{
+    if ([hijriOrGregorian isEqualToString:@"hijri"])
+    {
+        // Do stuff...
+        self.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierIslamicUmmAlQura];
+    }
+    if ([hijriOrGregorian isEqualToString:@"gregorian"])
+    {
+        // Do stuff...
+        self.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    }
+}
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame])) {
@@ -126,6 +137,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
   [super setDatePickerMode:datePickerMode];
   // We need to set minuteInterval after setting datePickerMode, otherwise minuteInterval is invalid in time mode.
   self.minuteInterval = _reactMinuteInterval;
+    
 }
 
 - (void)setMinuteInterval:(NSInteger)minuteInterval

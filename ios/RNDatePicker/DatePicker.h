@@ -10,6 +10,6 @@
 @interface DatePicker : UIDatePicker
 
 - (void)setTextColorProp:(NSString *)hexColor;
-
+-(void) setHijriOrGregorian:(NSString *)hijriOrGregorian;
 @end
 
