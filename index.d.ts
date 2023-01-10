@@ -103,6 +103,8 @@ export interface DatePickerProps extends ViewProps {
 
   /** Modal color theme on iOS. Defaults to 'auto' */
   theme?: 'light' | 'dark' | 'auto'
+  /** changes date from hijri to gretorian on ios */
+  hijriOrGregorian: 'hijri'|'gregorian'
 }
 
 export default class DatePicker extends Component<DatePickerProps> {}
